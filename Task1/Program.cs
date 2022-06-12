@@ -6,17 +6,16 @@ int M = int.Parse(Console.ReadLine());
 Console.Write("Введите второе натуральное число: ");
 int N = int.Parse(Console.ReadLine());
 
-if (M < N)
+
+int Print(int N, int M)
 {
-    for (int i = M; i <= N; i++)
-    {
-        Console.WriteLine($"{i}");
-    }
+    Console.WriteLine(N);
+    N--;
+    if (N >= M) return Print(N, M);
+    else return M;
 }
-else
-{
-    for (int i = M; i >= N; i--)
-    {
-        Console.WriteLine($"{i}");
-    }
-}
+
+Print(N, M);
+
+
+
